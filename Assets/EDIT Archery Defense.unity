@@ -2949,6 +2949,10 @@ PrefabInstance:
       value: Fish2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0970920edc7c5493c8b11455f0b276fa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0970920edc7c5493c8b11455f0b276fa, type: 3}
       propertyPath: m_TagString
       value: Fish
       objectReference: {fileID: 0}
@@ -3208,6 +3212,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9b80ec68a9f1844759090d485bcdce33, type: 3}
       propertyPath: m_Name
       value: Shark
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9b80ec68a9f1844759090d485bcdce33, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9b80ec68a9f1844759090d485bcdce33, type: 3}
       propertyPath: m_TagString
@@ -4122,6 +4130,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d227eaa17134e46ea97660ad40596d57, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1138461411}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d227eaa17134e46ea97660ad40596d57, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1138461413}
   m_SourcePrefab: {fileID: 100100000, guid: d227eaa17134e46ea97660ad40596d57, type: 3}
 --- !u!4 &1069265864 stripped
 Transform:
@@ -4419,6 +4430,28 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &1138461413
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138461408}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: d227eaa17134e46ea97660ad40596d57, type: 3}
+  m_Controller: {fileID: 9100000, guid: 887c91b01b7b3044c87a8e22f80ab445, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1155464465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5084,14 +5117,8 @@ MonoBehaviour:
   - tag: Fish
     prefab: {fileID: 1138461408}
     size: 2
-  - tag: Fish
-    prefab: {fileID: 295686461}
-    size: 1
-  - tag: Fish
-    prefab: {fileID: 478605838}
-    size: 1
   - tag: Enemy
-    prefab: {fileID: 413782302}
+    prefab: {fileID: 1779285544}
     size: 1
 --- !u!4 &1468666041
 Transform:
@@ -5838,6 +5865,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a282dba050d9a4854b0d9df8e4fe67ee, type: 3}
       propertyPath: m_Name
       value: Fish3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a282dba050d9a4854b0d9df8e4fe67ee, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a282dba050d9a4854b0d9df8e4fe67ee, type: 3}
       propertyPath: m_TagString
@@ -6656,6 +6687,10 @@ PrefabInstance:
       value: Manta ray
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cbca9e7762931489ebe19883eedf2543, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cbca9e7762931489ebe19883eedf2543, type: 3}
       propertyPath: m_TagString
       value: Fish
       objectReference: {fileID: 0}
@@ -7038,6 +7073,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1883230248363655243, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 389575651}
     - target: {fileID: 2449787133337329437, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_Layer
       value: 8

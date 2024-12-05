@@ -106,6 +106,14 @@ public class Arrow : MonoBehaviour
                     // Child of Arrow - Arrow Tip's Audio Source
                     arrowTipAudioSourceScript.Stop();
                     arrowTipAudioSourceScript.Play();
+
+                    // Check if the object hit has enemy tag
+                    if (hitInfo.transform.CompareTag("Enemy"))
+                    // If the object hit has enemy tag, then destroy the enemy
+                    {
+                        Destroy(hitInfo.transform.gameObject);
+                    }
+                                            
                 }
                 Stop();
             }

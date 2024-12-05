@@ -20,8 +20,10 @@ MonoBehaviour:
     rid: 2788755320712724482
   m_OverrideGlobalSceneList: 1
   m_Scenes:
-  - m_enabled: 1
+  - m_enabled: 0
     m_path: Assets/Archery Defense.unity
+  - m_enabled: 1
+    m_path: Assets/EDIT Archery Defense.unity
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings: []
@@ -47,7 +49,7 @@ MonoBehaviour:
         m_ExportAsGoogleAndroidProject: 0
         m_DebugSymbolLevel: 1
         m_DebugSymbolFormat: 5
-        m_CurrentDeploymentTargetId: 2G0YC5ZG760BCD
+        m_CurrentDeploymentTargetId: 2G0YC1ZG46079F
         m_BuildType: 1
         m_BuildAppBundle: 0
         m_IPAddressToConnect: 
