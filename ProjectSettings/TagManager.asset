@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Arrow
+  - Fish
+  - Enemy
   layers:
   - Default
   - TransparentFX

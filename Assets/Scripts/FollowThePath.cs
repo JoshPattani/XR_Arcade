@@ -4,11 +4,11 @@ public class FollowThePath : MonoBehaviour {
 
     // Array of waypoints to walk from one to the next one
     [SerializeField]
-    private Transform[] waypoints;
+    public Transform[] waypoints;
 
     // Walk speed that can be set in Inspector
     [SerializeField]
-    private float moveSpeed = 2f;
+    public float moveSpeed = 2f;
 
     // Index of current waypoint from which Enemy walks
     // to the next one

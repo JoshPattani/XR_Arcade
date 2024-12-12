@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &819541916276005432
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8153325861697551097}
+  - component: {fileID: 4259496844752287185}
+  m_Layer: 0
+  m_Name: SpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8153325861697551097
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819541916276005432}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.2132411, y: -12.246916, z: 101.03273}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4259496844752287185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819541916276005432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7c52486d0cd0cf41bc10597dbab89f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishTag: Fish
+  enemyTag: Enemy
+  fishSpawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  enemySpawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  fishSpawnInterval: 10
+  enemySpawnInterval: 15
+  maxFish: 10
+  maxEnemies: 3
+  fishSpeed: 5
+  fishPathLength: 10
+  enemySpeed: 1
+  enemyPathLength: 10
+  m_ObjectPrefabs:
+  - {fileID: 3629772215807322135, guid: 09b84219d9511b747ba72e78f30107bd, type: 3}
+  - {fileID: 3717147157197626255, guid: 2505edb8f6cd4dc4eb3c40448f7303de, type: 3}
+  - {fileID: 4664086830505231265, guid: f621eef97f20df54297c449d0783a4ff, type: 3}
+  - {fileID: 483877252210993490, guid: 66cad04e6b72f8049a69242a173c748e, type: 3}
+  - {fileID: 1211397781643336097, guid: 5df9fe5c93bfd7e48abeb63e7298ab20, type: 3}
+  - {fileID: 1164828036560550799, guid: 7fe188a3d6fe43d498f7e41afb853f75, type: 3}
+  fishWaypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  enemyWaypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
