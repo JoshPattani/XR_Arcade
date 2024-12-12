@@ -49,11 +49,12 @@ public class ObjectPooler : MonoBehaviour
 
     public GameObject SpawnFromPool(string tag, Vector3 position, Quaternion rotation)
     {
-        if (!poolDictionary.ContainsKey(tag))
-        {
-            Debug.LogWarning("Pool with tag " + tag + " doesn't exist.");
-            return null;
-        }
+        // Currently, throwing an error at this line: NullReferenceException: Object reference not set to an instance of an object
+        // if (!poolDictionary.ContainsKey(tag))
+        // {
+        //     Debug.LogWarning("Pool with tag " + tag + " doesn't exist.");
+        //     return null;
+        // }
 
         GameObject objectToSpawn = poolDictionary[tag].Dequeue();
 

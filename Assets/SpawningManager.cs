@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawningManager : MonoBehaviour
@@ -10,6 +11,21 @@ public class SpawningManager : MonoBehaviour
     public Transform[] enemySpawnPoints;
     public float fishSpawnInterval = 2f;
     public float enemySpawnInterval = 5f;
+    public int maxFish = 10;
+    public int maxEnemies = 3;
+
+    [SerializeField]
+    [Tooltip("The list of prefabs available to spawn.")]
+    List<GameObject> m_ObjectPrefabs = new List<GameObject>();
+
+    /// <summary>
+    /// The list of prefabs available to spawn.
+    /// </summary>
+    public List<GameObject> objectPrefabs
+    {
+        get => m_ObjectPrefabs;
+        set => m_ObjectPrefabs = value;
+    }
 
     void Start()
     {
@@ -37,15 +53,32 @@ public class SpawningManager : MonoBehaviour
 
     void SpawnFishAtRandomPoint()
     {
-        int spawnIndex = Random.Range(0, fishSpawnPoints.Length);
-        Transform spawnPoint = fishSpawnPoints[spawnIndex];
-        ObjectPooler.Instance.SpawnFromPool(fishTag, spawnPoint.position, spawnPoint.rotation);
+        if (fishSpawnPoints.Length == 0 || fishSpawnPoints.Length > maxFish)
+        {
+            return;
+        }
+        int randomIndex = Random.Range(0, fishSpawnPoints.Length);
+        Transform spawnPoint = fishSpawnPoints[randomIndex];
+        GameObject fishPrefab = objectPrefabs.Find(prefab => prefab.CompareTag(fishTag));
+        if (fishPrefab != null)
+        {
+            Instantiate(fishPrefab, spawnPoint.position, spawnPoint.rotation);
+        }
+
     }
 
     void SpawnEnemyAtRandomPoint()
     {
-        int spawnIndex = Random.Range(0, enemySpawnPoints.Length);
-        Transform spawnPoint = enemySpawnPoints[spawnIndex];
-        ObjectPooler.Instance.SpawnFromPool(enemyTag, spawnPoint.position, spawnPoint.rotation);
+        if (enemySpawnPoints.Length == 0 || enemySpawnPoints.Length > maxEnemies)
+        {
+            return;
+        }
+        int randomIndex = Random.Range(0, enemySpawnPoints.Length);
+        Transform spawnPoint = enemySpawnPoints[randomIndex];
+        GameObject enemyPrefab = objectPrefabs.Find(prefab => prefab.CompareTag(enemyTag));
+        if (enemyPrefab != null)
+        {
+            Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        }
     }
 }
