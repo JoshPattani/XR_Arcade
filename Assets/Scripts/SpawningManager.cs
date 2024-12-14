@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,22 +25,23 @@ public class SpawningManager : MonoBehaviour
 
     [SerializeField]
     [Tooltip("The list of prefabs available to spawn.")]
-    List<GameObject> m_ObjectPrefabs = new List<GameObject>();
+    List<GameObject> m_ObjectPrefabs = new();
 
     /// <summary>
     /// The list of prefabs available to spawn.
     /// </summary>
-    public List<GameObject> objectPrefabs
+    public List<GameObject> ObjectPrefabs
     {
         get => m_ObjectPrefabs;
         set => m_ObjectPrefabs = value;
     }
 
     /// <summary>
-    // List of waypoints to swim to.
+    // List of waypoints assigned to fish prefabs in FollowThePath script component.
     /// </summary>
-    public List<Transform> fishWaypoints = new List<Transform>();
-    public List<Transform> enemyWaypoints = new List<Transform>();
+    /// 
+    public Transform[] fishWaypoints;
+    public Transform[] enemyWaypoints;
 
 
     void Start()
@@ -72,18 +74,21 @@ public class SpawningManager : MonoBehaviour
         {
             return;
         }
-        int randomIndex = Random.Range(0, fishSpawnPoints.Length);
+        int randomIndex = UnityEngine.Random.Range(0, fishSpawnPoints.Length);
         Transform spawnPoint = fishSpawnPoints[randomIndex];
-        GameObject fishPrefab = objectPrefabs.Find(prefab => prefab.CompareTag(fishTag));
+        GameObject fishPrefab = ObjectPrefabs.Find(prefab => prefab.CompareTag(fishTag));
         if (fishPrefab != null)
         {
-            Instantiate(fishPrefab, spawnPoint.position, spawnPoint.rotation);
-
-            // assign the waypoints for the fish to swim to to the followThePath component
-            FollowThePath followThePath = fishPrefab.GetComponent<FollowThePath>();
-            followThePath.waypoints = fishWaypoints.ToArray();
+            // Instantiate fish prefab at spawn point as a child of the spawn manager
+            GameObject fish = Instantiate(fishPrefab, spawnPoint.position, Quaternion.identity);
+            fish.transform.parent = transform;
+            // Set fish's initial speed and direction
+            FollowThePath followThePath = fish.GetComponent<FollowThePath>();
             followThePath.moveSpeed = fishSpeed;
+            followThePath.pathLength = fishPathLength;
 
+            // Randomize the waypoints for the fish to swim to and assign them to the fish's followThePath component
+            followThePath.waypoints = fishWaypoints;
         }
 
     }
@@ -94,17 +99,21 @@ public class SpawningManager : MonoBehaviour
         {
             return;
         }
-        int randomIndex = Random.Range(0, enemySpawnPoints.Length);
+        int randomIndex = UnityEngine.Random.Range(0, enemySpawnPoints.Length);
         Transform spawnPoint = enemySpawnPoints[randomIndex];
-        GameObject enemyPrefab = objectPrefabs.Find(prefab => prefab.CompareTag(enemyTag));
+        GameObject enemyPrefab = ObjectPrefabs.Find(prefab => prefab.CompareTag(enemyTag));
         if (enemyPrefab != null)
         {
-            Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
-
-            // assign the waypoints for the enemy to swim to the followThePath component
-            FollowThePath followThePath = enemyPrefab.GetComponent<FollowThePath>();
-            followThePath.waypoints = enemyWaypoints.ToArray();
+            // Instantiate enemy prefab at spawn point as a child of the spawn manager
+            GameObject enemy = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
+            enemy.transform.parent = transform;
+            // Set enemy's initial speed and direction
+            FollowThePath followThePath = enemy.GetComponent<FollowThePath>();
             followThePath.moveSpeed = enemySpeed;
+            followThePath.pathLength = enemyPathLength;
+
+            // Randomize the waypoints for the enemy to walk to and assign them to the enemy's followThePath component
+            followThePath.waypoints = enemyWaypoints;
         }
     }
 }

@@ -66,9 +66,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d227eaa17134e46ea97660ad40596d57, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4459554937196470847}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d227eaa17134e46ea97660ad40596d57, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1253055534416673201}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d227eaa17134e46ea97660ad40596d57, type: 3}
       insertIndex: -1
@@ -76,31 +73,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d227eaa17134e46ea97660ad40596d57, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2715495393397941785}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d227eaa17134e46ea97660ad40596d57, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5012922823141084425}
   m_SourcePrefab: {fileID: 100100000, guid: d227eaa17134e46ea97660ad40596d57, type: 3}
 --- !u!1 &3629772215807322135 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d227eaa17134e46ea97660ad40596d57, type: 3}
   m_PrefabInstance: {fileID: 4512293778115663174}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4459554937196470847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3629772215807322135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99542b4ec78dc40e2b34c1b4d377aee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  moveSpeed: 5
 --- !u!114 &1253055534416673201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,3 +145,17 @@ CapsuleCollider:
   m_Height: 2.900259
   m_Direction: 2
   m_Center: {x: 0, y: 0.079046845, z: -0.45928288}
+--- !u!114 &5012922823141084425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3629772215807322135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99542b4ec78dc40e2b34c1b4d377aee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
+  moveSpeed: 2

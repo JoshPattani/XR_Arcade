@@ -1,14 +1,14 @@
 using UnityEngine;
 
 public class FollowThePath : MonoBehaviour {
-
-    // Array of waypoints to walk from one to the next one
-    [SerializeField]
+    // Waypoints array that Enemy walks along
+    // assigned in SpawningManager when Enemy is spawned
     public Transform[] waypoints;
 
-    // Walk speed that can be set in Inspector
-    [SerializeField]
-    public float moveSpeed = 2f;
+    public float pathLength;
+
+    // Move speed assigned in SpawningManager when Enemy is spawned
+    public float moveSpeed;
 
     // Index of current waypoint from which Enemy walks
     // to the next one
@@ -16,7 +16,7 @@ public class FollowThePath : MonoBehaviour {
 
 	// Use this for initialization
 	private void Start () {
-
+        
         // Set position of Enemy as position of the first waypoint
         transform.position = waypoints[waypointIndex].transform.position;
 	}
