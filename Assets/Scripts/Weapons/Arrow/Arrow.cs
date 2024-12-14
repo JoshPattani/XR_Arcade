@@ -97,6 +97,12 @@ public class Arrow : MonoBehaviour
         {
             if (hitInfo.transform.gameObject.layer != 8)
             {
+                // UI reset target
+                if (hitInfo.transform.gameObject.layer == 5)
+                {
+                    // Reset scene
+                    GameManager.Instance.ResetGame();
+                }
                 if (hitInfo.transform.TryGetComponent(out Rigidbody body))
                 {
                     rigidBody.interpolation = RigidbodyInterpolation.None;

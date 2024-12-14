@@ -76,8 +76,13 @@ public class SpawningManager : MonoBehaviour
         }
         int randomIndex = UnityEngine.Random.Range(0, fishSpawnPoints.Length);
         Transform spawnPoint = fishSpawnPoints[randomIndex];
-        GameObject fishPrefab = ObjectPrefabs.Find(prefab => prefab.CompareTag(fishTag));
-        if (fishPrefab != null)
+
+        // Randomly select a fish prefab from the list of four prefab fishes
+        int randomFishIndex = UnityEngine.Random.Range(0, ObjectPrefabs.Count);
+        GameObject fishPrefab = ObjectPrefabs[randomFishIndex];
+        string fishPrefabTag = fishPrefab.tag;
+
+        if (fishPrefabTag != null)
         {
             // Instantiate fish prefab at spawn point as a child of the spawn manager
             GameObject fish = Instantiate(fishPrefab, spawnPoint.position, Quaternion.identity);
@@ -101,6 +106,8 @@ public class SpawningManager : MonoBehaviour
         }
         int randomIndex = UnityEngine.Random.Range(0, enemySpawnPoints.Length);
         Transform spawnPoint = enemySpawnPoints[randomIndex];
+        
+        
         GameObject enemyPrefab = ObjectPrefabs.Find(prefab => prefab.CompareTag(enemyTag));
         if (enemyPrefab != null)
         {

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class IslandHealth : MonoBehaviour
 {
@@ -43,6 +44,9 @@ private void TakeDamage(int damage)
     {
         Debug.Log("Island Destroyed!");
         // Add any destruction or game-over logic here
+
+        // Reset the scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
 
